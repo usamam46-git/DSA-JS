@@ -18,3 +18,110 @@
 //   81, 82, 83, 84, 85, 86, 87, 88, 89, 90,
 //   91, 92, 93, 94, 95, 96, 97, 98, 99, 100
 // ])
+
+
+// class linkedList {
+//     constructor(value){
+//        const newNode = new Node(value)
+//        this.head = newNode
+//        this.tail = newNode
+//        this.length = 1
+//     }
+// }
+
+// const newLinkedList = new linkedList(10)
+// console.log(newLinkedList)
+
+
+class Node {
+    constructor(value) {
+        this.value = value
+        this.next = null
+    }
+}
+
+class linkedList {
+    constructor() {
+        this.head = null
+        this.tail = null
+        this.length = 0
+    }
+    append(value) {
+        const newNode = new Node(value)
+        if (this.length === 0) {
+            this.head = newNode
+            this.tail = newNode
+        } else {
+            this.tail.next = newNode
+            this.tail = newNode
+        }
+        this.length++
+    }
+
+    prepend(value) {
+        let newNode = new Node(value)
+        if (this.length == 0) {
+            this.head = newNode
+            this.tail = newNode
+        } else {
+            newNode.next = this.head
+            this.head = newNode
+        }
+        this.length++
+    }
+
+    insert(value, index) {
+        let newNode = new Node(value)
+        let tempNode = this.head
+
+        if (index < -1 || index > this.length) {
+            return false
+        } else if (index === -1 || index === this.length) {
+            this.tail.next = newNode
+            this.tail = newNode
+        }
+        else if (index === 0) {
+            newNode.next = this.head
+            this.head = newNode
+        } else if (this.length === 0) {
+            this.head = newNode
+            this.tail = newNode
+        } else {
+            for (let i = 0; i < index - 1; i++) {
+                tempNode = tempNode.next
+            }
+            newNode.next = tempNode.next
+            tempNode.next = newNode
+        }
+        this.length++
+
+    }
+
+    toString() {
+        let tempNode = this.head;
+        let result = "";
+
+        while (tempNode !== null) {
+            result += tempNode.value;
+            if (tempNode.next !== null) {
+                result += "=>";
+            }
+            tempNode = tempNode.next;
+        }
+
+        return result;
+    }
+}
+
+const newLinkedList = new linkedList()
+
+newLinkedList.append(10)
+newLinkedList.append(20)
+newLinkedList.append(30)
+newLinkedList.prepend(100)
+newLinkedList.insert(100, -1)
+console.log(newLinkedList)
+const stringVersion = newLinkedList.toString()
+console.log(stringVersion)
+
+
