@@ -76,3 +76,120 @@
 //     }
 // }
 
+
+
+
+// class Node {
+//     constructor(value) {
+//         this.value = value;
+//         this.next = null;
+//         this.prev = null;
+//     }
+// }
+
+// class DoublyLinkedList {
+//     constructor() {
+//         this.head = null;
+//         this.tail = null;
+//         this.length = 0;
+//     }
+
+//     append(value) {
+//         const newNode = new Node(value);
+//         if (this.length === 0) {
+//             this.head = newNode;
+//             this.tail = newNode;
+//         } else {
+//             this.tail.next = newNode;
+//             newNode.prev = this.tail;
+//             this.tail = newNode;
+//         }
+//         this.length++;
+//     }
+
+//    reverseTraverse() {
+//     let tempNode = this.tail;
+//     while (tempNode !== null) {
+//         console.log(tempNode.value);
+//         tempNode = tempNode.prev;
+//     }
+// }
+
+// }
+
+//Pop First
+
+
+// class Node {
+//     constructor(value) {
+//         this.value = value;
+//         this.next = null;
+//         this.prev = null;
+//     }
+// }
+
+// class DoublyLinkedList {
+//     constructor() {
+//         this.head = null;
+//         this.tail = null;
+//         this.length = 0;
+//     }
+
+//     append(value) {
+//         const newNode = new Node(value);
+//         if (this.length === 0) {
+//             this.head = newNode;
+//             this.tail = newNode;
+//         } else {
+//             this.tail.next = newNode;
+//             newNode.prev = this.tail;
+//             this.tail = newNode;
+//         }
+//         this.length++;
+//     }
+
+//     popFirst() {
+//        if(this.length === 0){
+//         return null
+//        }
+//        if(this.length === 1){
+//         this.head = null
+//         this.tail = null
+//         this.length--
+//         return popped
+//        } else {
+//         let popped = this.head
+//         this.head = popped.next
+//         popped.next.prev = null
+//         popped.next = null
+//         return popped
+//        }
+//     }
+// }
+
+
+class Node {
+    constructor(value) {
+        this.value = value;
+        this.next = null;
+        this.prev = null;
+    }
+}
+
+class CircularDoublyLinkedList {
+    constructor() {
+        this.head = null;
+        this.tail = null;
+        this.length = 0;
+    }
+
+    append(value) {
+        // TO DO
+    }
+}
+
+
+
+
+
+
