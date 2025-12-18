@@ -168,3 +168,37 @@ function isValid(s) {
 
     }
 };
+
+
+
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+// var isValid = function(s) {
+//     const stack = [];
+//     const bracketMap = {
+//         ')': '(',
+//         '}': '{',
+//         ']': '['
+//     };
+    
+//     for (let char of s) {
+//         // If opening bracket, push to stack
+//         if (char === '(' || char === '{' || char === '[') {
+//             stack.push(char);
+//         } else {
+//             // If closing bracket, check match
+//             if (stack.length === 0 || stack[stack.length - 1] !== bracketMap[char]) {
+//                 return false;
+//             }
+//             stack.pop();
+//         }
+//     }
+    
+//     // Valid if stack is empty
+//     return stack.length === 0;
+// };
+
+
+// console.log(isValid('(((]}))'))
