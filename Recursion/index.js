@@ -62,13 +62,6 @@
 // // }
 
 
-// // function power(base, exp) {
-// //     if(base === 0){
-// //         return 0
-// //     }
-// //     return power((base - 1 ) * exp)
-// // }
-
 // function power(base, exp) {
 //     // Base case
 //     if (exp === 0) {
@@ -107,15 +100,15 @@
 
 // isPalindrome("A man, a plan, a canal, Panama") → true
 
-function isPalindrome(s) {
-    if (s <= 1) {
-        return true
-    }
-    if (s[0] !== s[s.length - 1]){
-        return false
-    }
-        return isPalindrome(s.slice(1, (s.length - 1)))
-}
+// function isPalindrome(s) {
+//     if (s <= 1) {
+//         return true
+//     }
+//     if (s[0] !== s[s.length - 1]){
+//         return false
+//     }
+//         return isPalindrome(s.slice(1, (s.length - 1)))
+// }
 
 
 
@@ -129,5 +122,6 @@ function isPalindrome(s) {
 //     return s[s.length - 1] + reverseString(s.slice(0, s.length - 1))
 // }
 
-let str = "madam"
-console.log(isPalindrome(str)) // "amasu"
+// let str = 'Hello'
+
+// console.log(str.split("").reverse().join(""))

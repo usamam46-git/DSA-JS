@@ -186,8 +186,8 @@
 
 // console.log(arr2)
 
-let arr = [1,2,3,4,5,6]
-let arr2 = JSON.stringify(arr)
-console.log(typeof arr2)
+// let arr = [1,2,3,4,5,6]
+// let arr2 = JSON.stringify(arr)
+// console.log(typeof arr2)
 
 
