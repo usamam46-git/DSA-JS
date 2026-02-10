@@ -1,0 +1,44 @@
+services:
+  gitlab:
+    image: gitlab/gitlab-ce:latest
+    container_name: gitlab-server
+    restart: always
+    hostname: gitlab.localhost
+    shm_size: '256m'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://gitlab.localhost'
+        gitlab_rails['initial_root_password'] = 'Incognito123'
+        gitlab_rails['gitlab_shell_ssh_port'] = 2222
+
+        # Disable LetsEncrypt (local / self-managed)
+        letsencrypt['enable'] = false
+
+        # Puma (safe defaults)
+        puma['worker_timeout'] = 60
+
+    ports:
+      - "8000:80"
+      - "8443:443"
+      - "2222:22"
+
+    volumes:
+      - gitlab_config:/etc/gitlab
+      - gitlab_logs:/var/log/gitlab
+      - gitlab_data:/var/opt/gitlab
+
+  gitlab-runner:
+    image: gitlab/gitlab-runner:latest
+    container_name: gitlab-runner
+    restart: always
+    depends_on:
+      - gitlab
+    volumes:
+      - gitlab_runner_config:/etc/gitlab-runner
+      - /var/run/docker.sock:/var/run/docker.sock
+
+volumes:
+  gitlab_config:
+  gitlab_logs:
+  gitlab_data:
+  gitlab_runner_config:
