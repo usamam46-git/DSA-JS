@@ -1,0 +1,16 @@
+{
+  "name": "ec2-test-app",
+  "version": "1.0.0",
+  "description": "Small Node.js web app for testing EC2 deployments",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["ec2", "test", "deployment"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
