@@ -68,3 +68,28 @@ function hasCycle(graph) {
 
   return false
 }
+
+//Count disconnected groups in a graph.
+
+function countComponents(graph) {
+  const visited = new Set()
+  let count = 0
+
+  function dfs(node) {
+    if (visited.has(node)) return
+    visited.add(node)
+
+    for (let neighbor of graph[node]) {
+      dfs(neighbor)
+    }
+  }
+
+  for (let node in graph) {
+    if (!visited.has(node)) {
+      dfs(node)
+      count++
+    }
+  }
+
+  return count
+}
