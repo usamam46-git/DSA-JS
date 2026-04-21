@@ -18,6 +18,18 @@ class Tree {
             this.children.splice(index, 1)
         }
     }
+
+    delete() {
+        let location = this.search(value)
+        if(location === -1){
+            return false
+        } else {
+            this.arr[location] = this.arr[this.lastUsedIndex]
+            this.arr.pop()
+            this.lastUsedIndex--
+            return true
+        }
+    }
 }
 
 
@@ -32,3 +44,6 @@ tree.addChild(three)
 tree.addChild(four)
 
 console.log(tree.removeChild(four))
+
+
+
